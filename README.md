@@ -1,51 +1,26 @@
-# IMT Transportadora — site completo
+# IMT Transportadora
 
-Este projeto é um ponto de partida funcional com:
-- Site público responsivo
-- Logo IMT integrada
-- Carrossel de banners/fotos
-- Serviços
-- Sobre Nós
-- Ouvidoria pública
-- Login de funcionários
-- Controle de ponto: Começar / Pausar / Retomar / Finalizar
-- Contratos e empresas parceiras
-- Tabela de preços
-- Painel administrativo
-- Criação de usuários e definição de cargos
-- Controle de acesso à Ouvidoria
-- Banco SQLite local
+Site corporativo com páginas separadas por categoria, carrossel administrável, área de funcionários, ponto, autorização de usuários, tabela de preços, ouvidoria e rádio.
 
-## Como rodar
-1. Instale Node.js 18 ou superior.
-2. Abra um terminal nesta pasta.
-3. Rode `npm install`
-4. Rode `npm start`
-5. Abra `http://localhost:3000`
+## Rodar
+npm install
+npm start
+
+Acesse http://localhost:3000
 
 ## Primeiro acesso
-E-mail: `admin@imttransportadora.com.br`
-Senha: `Troque123!`
+E-mail: admin@imttransportadora.com.br
+Senha inicial: Troque123!
 
-IMPORTANTE: troque a senha imediatamente e, em produção, defina `SESSION_SECRET` com uma chave forte.
+Troque a senha imediatamente pela opção Meu acesso.
 
-## Para colocar na internet
-Você precisará de:
-- um domínio (ex.: imttransportadora.com.br)
-- hospedagem compatível com Node.js
-- HTTPS
-- banco de dados persistente
-- backup
+## Funções novas
+- Carrossel: Gestor do Site e Presidência podem adicionar, ativar, ocultar e excluir slides.
+- Cadastro: usuário pode solicitar acesso; Presidência aprova e escolhe o cargo.
+- Meu acesso: alteração de e-mail e senha.
+- Gestor do Site: carrossel, preços e visualização da ouvidoria.
+- Ponto: tela própria dentro da área do funcionário.
+- Rádio: streaming fixo durante a navegação do site. Fechar o navegador pode interromper a reprodução conforme as regras do navegador.
 
-O projeto já está estruturado para receber domínio e hospedagem, mas o domínio/hospedagem precisam ser contratados em uma conta do proprietário.
-
-## Próximas melhorias recomendadas
-- Upload de contratos em PDF
-- Fotos reais da frota pelo painel
-- Relatórios de ponto por período
-- Aprovação/assinatura digital de contratos
-- Recuperação de senha por e-mail
-- 2FA para administradores
-- Banco PostgreSQL para produção
-- Auditoria de alterações
-- Política de privacidade/LGPD
+## Produção
+Defina SESSION_SECRET forte. O SQLite local é adequado para teste, mas em hospedagem gratuita com filesystem efêmero os dados podem ser perdidos; use banco persistente para produção.
