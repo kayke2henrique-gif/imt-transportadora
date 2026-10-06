@@ -12,7 +12,7 @@ const SESSION_SECRET = process.env.SESSION_SECRET || 'troque-esta-chave-em-produ
 app.use(express.json({ limit: '8mb' }));
 app.use(express.urlencoded({ extended: true, limit: '8mb' }));
 app.use(session({ secret: SESSION_SECRET, resave: false, saveUninitialized: false, cookie: { httpOnly: true, sameSite: 'lax', secure: false, maxAge: 1000*60*60*12 } }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '.')));
 
 function addColumn(sql){ try { db.exec(sql); } catch(e){ if(!String(e.message).includes('duplicate column name')) throw e; } }
 
