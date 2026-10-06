@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IMT Transportadora</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="logo.png" alt="IMT Transportadora"></div>
+  <nav>
+    <a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#contratos">Contratos</a>
+    <a href="#precos">Tabela de Preços</a><a href="#sobre">Sobre Nós</a><a href="#ouvidoria">Ouvidoria</a>
+    <button id="loginBtn" class="outline">Área do Funcionário</button>
+  </nav>
+</header>
+
+<main>
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <span class="tag">TRANSPORTE • LOGÍSTICA • CONFIANÇA</span>
+    <h1>Movendo negócios.<br><strong>Entregando confiança.</strong></h1>
+    <p>Transporte profissional, cuidado na estrada e compromisso em cada operação.</p>
+    <div class="actions"><a class="btn" href="#servicos">Conheça nossos serviços</a><a class="btn ghost" href="#ouvidoria">Fale com a IMT</a></div>
+  </div>
+</section>
+
+<section class="carousel-wrap">
+  <div class="carousel" id="carousel">
+    <article class="slide active" style="background-image:url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=80')"><div><small>NA ESTRADA</small><h2>Segurança em cada quilômetro</h2><p>Operações planejadas e foco total no cuidado com pessoas e cargas.</p></div></article>
+    <article class="slide" style="background-image:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=1800&q=80')"><div><small>FROTA</small><h2>Força para chegar mais longe</h2><p>Uma operação preparada para diferentes necessidades de transporte.</p></div></article>
+    <article class="slide" style="background-image:url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1800&q=80')"><div><small>COMPROMISSO</small><h2>Cada entrega importa</h2><p>Relacionamento, responsabilidade e transparência do início ao fim.</p></div></article>
+  </div>
+  <div class="dots"><button data-i="0" class="on"></button><button data-i="1"></button><button data-i="2"></button></div>
+</section>
+
+<section id="servicos" class="section">
+  <div class="section-head"><span>O QUE FAZEMOS</span><h2>Soluções para sua operação</h2></div>
+  <div class="cards">
+    <div class="card"><b>🚛 Transporte de Cargas</b><p>Operações rodoviárias com foco em prazo, segurança e organização.</p></div>
+    <div class="card"><b>📦 Logística</b><p>Planejamento e acompanhamento para tornar sua operação mais eficiente.</p></div>
+    <div class="card"><b>🤝 Parcerias</b><p>Contratos e operações construídos com empresas que valorizam confiança.</p></div>
+  </div>
+</section>
+
+<section id="contratos" class="section dark-panel">
+  <div class="section-head"><span>PARCERIAS</span><h2>Contratos e empresas parceiras</h2></div>
+  <div id="contractsPublic" class="grid-list"><div class="empty">Entre na área interna para consultar os contratos cadastrados.</div></div>
+</section>
+
+<section id="precos" class="section">
+  <div class="section-head"><span>COMERCIAL</span><h2>Tabela de preços</h2><p>Consulte os valores definidos pela área comercial. O conteúdo detalhado exige acesso interno.</p></div>
+  <div id="pricesPublic" class="grid-list"><div class="empty">Área restrita aos usuários autorizados.</div></div>
+</section>
+
+<section id="sobre" class="about section">
+  <div><img src="logo.png" class="about-logo" alt="IMT Transportadora"></div>
+  <div><span class="tag blue">SOBRE A IMT</span><h2>Uma transportadora feita para ir além.</h2>
+  <p>A IMT Transportadora nasce com foco em profissionalismo, segurança, respeito às pessoas e compromisso com cada operação. Nosso objetivo é conectar empresas e destinos com uma logística organizada e confiável.</p>
+  <p>Do planejamento à estrada, valorizamos comunicação, cuidado com a frota e responsabilidade em cada etapa.</p></div>
+</section>
+
+<section id="ouvidoria" class="section ouvidoria">
+  <div class="section-head"><span>CANAL DE ESCUTA</span><h2>Ouvidoria</h2><p>Envie uma mensagem para a IMT. O acesso às manifestações é restrito à Diretoria Comercial, Presidência e Gerência de Logística.</p></div>
+  <form id="ombForm" class="form">
+    <input name="name" placeholder="Seu nome">
+    <input name="email" type="email" placeholder="Seu e-mail">
+    <textarea name="message" required placeholder="Digite sua mensagem..."></textarea>
+    <button class="btn">Enviar para a Ouvidoria</button>
+    <span id="ombMsg"></span>
+  </form>
+</section>
+</main>
+
+<footer><img src="logo.png"><span>© <span id="year"></span> IMT Transportadora. Todos os direitos reservados.</span></footer>
+
+<div id="loginModal" class="modal hidden"><div class="modal-box"><button class="x" id="closeLogin">×</button><h2>Área interna</h2><p>Acesso para funcionários e gestores.</p><form id="loginForm" class="form"><input name="email" type="email" placeholder="E-mail" required><input name="password" type="password" placeholder="Senha" required><button class="btn">Entrar</button><span id="loginMsg"></span></form></div></div>
+
+<div id="panel" class="drawer hidden">
+  <div class="drawer-head"><div><small>PAINEL INTERNO</small><h2 id="welcome"></h2></div><button class="x" id="logout">Sair</button></div>
+  <div class="tabs">
+    <button data-tab="ponto">⏱ Ponto</button><button data-tab="contratos">📄 Contratos</button><button data-tab="precos">💰 Preços</button><button data-tab="ouvidoria">📨 Ouvidoria</button><button data-tab="admin">⚙ Administração</button>
+  </div>
+  <div id="tabContent"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
